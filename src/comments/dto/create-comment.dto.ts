@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, MinLength, IsDate } from 'class-validator';
+import { IsString, IsNotEmpty, MinLength, IsDateString } from 'class-validator';
 
 export class CreateCommentDto {
   @IsString({ message: 'El nombre de usuario debe ser un texto' })
@@ -12,7 +12,7 @@ export class CreateCommentDto {
   @IsNotEmpty({ message: 'El mensaje no puede estar vacío' })
   message: string;
 
-  @IsDate({ message: 'La fecha debe ser válida' })
+  @IsDateString({}, { message: 'La fecha debe ser válida' })
   @IsNotEmpty({ message: 'La fecha es requerida' })
-  date: number;
+  date: string;
 }

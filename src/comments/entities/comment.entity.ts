@@ -12,5 +12,5 @@ export class Comment {
   message: string;
 
   @Column()
-  date: Date;
+  date: string;
 }
